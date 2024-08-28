@@ -5,13 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-  <title>Anon - eCommerce Website</title>
-=======
-  <link rel="stylesheet" href="CSS/style-prefix.css">
-  <link rel="stylesheet" href="CSS/style.css">
-  <title>E-Commerce Website</title>
->>>>>>> fa59d6c0213316fdbed55f111852b1e1ac7d9fa5
+  <title>Commerce Website</title>
 
   <!--
     - favicon
@@ -42,7 +36,7 @@
     - MODAL
   -->
 
-  <div class="modal" data-modal>
+  <!-- <div class="modal" data-modal>
 
     <div class="modal-close-overlay" data-modal-overlay></div>
 
@@ -80,7 +74,7 @@
 
     </div>
 
-  </div>
+  </div> -->
 
 
 
@@ -90,7 +84,7 @@
     - NOTIFICATION TOAST
   -->
 
-  <div class="notification-toast" data-toast>
+  <!-- <div class="notification-toast" data-toast>
 
     <button class="toast-close-btn" data-toast-close>
       <ion-icon name="close-outline"></ion-icon>
@@ -116,7 +110,7 @@
 
     </div>
 
-  </div>
+  </div> -->
 
 
 
@@ -163,7 +157,7 @@
         <div class="header-alert-news">
           <p>
             <b>Free Shipping</b>
-            This Week Order Over - $55
+            This Week Order Over - 5k
           </p>
         </div>
 
@@ -171,16 +165,16 @@
 
           <select name="currency">
 
+            <option value="ind">INR ₹;</option>
             <option value="usd">USD &dollar;</option>
-            <option value="eur">EUR &euro;</option>
 
           </select>
 
           <select name="language">
 
             <option value="en-US">English</option>
-            <option value="es-ES">Espa&ntilde;ol</option>
-            <option value="fr">Fran&ccedil;ais</option>
+            <option value="hi-IN">हिन्दी</option>
+
 
           </select>
 
@@ -763,7 +757,16 @@
     </nav>
 
   </header>
-   <main>
+
+
+
+
+
+  <!--
+    - MAIN
+  -->
+
+  <main>
 
     <!--
       - BANNER
