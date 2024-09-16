@@ -16,14 +16,14 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="CSS/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="CSS/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="CSS/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="CSS/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="CSS/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="CSS/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="CSS/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body>
@@ -75,17 +75,35 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="login.jsp">Log in</a>
+                            
+                            
+                               <% 
+    if (session == null || session.getAttribute("username") == null) { 
+%>
+    <!-- Show Log in link if user is not logged in -->
+    <a href="login.jsp">Log in</a>
+<%
+    } else {
+        // User is logged in, retrieve the username
+        String username = (String) session.getAttribute("username");
+%>
+    <!-- Display the username -->
+   
+    
+<div class="header__top__hover">
+                                <span><i class="fa-solid fa-user-tie" style="color: #fafafa;"></i> <%= username %> <i class="arrow_carrot-down"></i></span>
+                                <ul>
+                                	<li>My Profile</li>
+                                	<li>Edit Profile</li>
+                                    <li><a style="color: black;" href="LogoutServlet">Logout</a></li>
+                                </ul>
+                            </div>  
+<%
+    }
+%>
                                 <a href="#">Orders</a>
                             </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>Asia</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -726,6 +744,9 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/676e48180e.js" crossorigin="anonymous"></script>
 </body>
+
+
 
 </html>
