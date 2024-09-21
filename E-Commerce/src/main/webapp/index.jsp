@@ -16,14 +16,14 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="CSS/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="CSS/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="CSS/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="CSS/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="CSS/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="CSS/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
 </head>
 
 <body>
@@ -57,7 +57,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Free shipping, 30-day return or refund guarantee.</p>
+            <p>Free shipping, 10-day return or refund guarantee.</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -120,7 +120,7 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="./index.jsp">Home</a></li>
-                            <li><a href="./shop.jsp">Shop</a></li>
+                            <li><a href="shop.jsp">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about.jsp">About Us</a></li>
