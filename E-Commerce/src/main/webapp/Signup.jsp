@@ -61,7 +61,7 @@
 
 <!-- you don't need that :)  -->
 <div class="direction">
-  Welcome! to Men'skart
+  Welcome! to Men'skart.
 </div>
 <!-- partial -->
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
