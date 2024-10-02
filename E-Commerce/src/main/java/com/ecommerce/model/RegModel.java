@@ -1,60 +1,76 @@
 package com.ecommerce.model;
 
 public class RegModel {
-    private String fname;
-    private String lname;
+    private String firstname;
+    private String lastname;
     private String email;
-    private String username;
+    private String mobileno;
     private String password;
-    
-    public RegModel(String fname,String lname, String email,String username,String password) {
-        this.fname = fname;
-        this.lname = lname;
+    private String confirmpassword;
+
+    // Constructor
+    public RegModel(String firstname, String lastname, String email, String mobileno, String password, String confirmPassword) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
-        this.username = username;
-        this.password=password;
-    }
-
-    public String getfName() {
-        return fname;
-    }
-
-    public void setfName(String fname) {
-        this.fname = fname;
-    }
-
-    public String getlName() {
-        return lname;
-    }
-
-    public void setlName(String lname) {
-        this.lname = lname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
+        this.mobileno = mobileno;
         this.password = password;
+        this.confirmpassword = confirmPassword;
     }
-    @Override
-    public String toString() {
-        return "RegModel [First Name = " + fname +", Last Name = " + lname + ", email = " + email +", username = " + username + ", password = " + password+ "]";
-    }
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getMobileno() {
+		return mobileno;
+	}
+
+	public void setPhone(String mobileno) {
+		this.mobileno = mobileno;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getConfirmpassword() {
+		return confirmpassword;
+	}
+
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
+	}
+
+	@Override
+	public String toString() {
+		return "RegModel [firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", mobileno=" + mobileno
+				+ ", password=" + password + ", confirmpassword=" + confirmpassword + "]";
+	}
 }
+
+   

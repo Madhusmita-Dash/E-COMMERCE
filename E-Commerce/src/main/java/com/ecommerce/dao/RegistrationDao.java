@@ -7,16 +7,16 @@ import java.sql.PreparedStatement;
 import com.ecommerce.model.RegModel;
 
 public class RegistrationDao {
-    private static final String URL = "jdbc:mysql://localhost:3306/mens_kart";
+    private static final String URL = "jdbc:mysql://localhost:3306/advancejava";
     private static final String USER = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "biswa083."; // Consider moving this to a config file
     private static final String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 
     static {
         try {
             Class.forName(DRIVER_CLASS);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Database Driver not found", e);
         }
     }
 
@@ -26,18 +26,28 @@ public class RegistrationDao {
     
     public boolean saveRegistration(RegModel regModel) {
         boolean status = false;
-        try (Connection connection = RegistrationDao.getConnection()) {
-            String query = "INSERT INTO user_info (fname,lname, email,username,password) VALUES (?, ?, ?,?,?)";
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, regModel.getfName());
-            ps.setString(2, regModel.getlName());
+        String query = "INSERT INTO signup (firstname, lastname, email, mobileno, password, confirmpassword) VALUES (?, ?, ?, ?, ?, ?)";
+
+        // Use try-with-resources to ensure resources are closed properly
+        try (Connection connection = getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+             
+            // Set parameters for the PreparedStatement
+            ps.setString(1, regModel.getFirstname());
+            ps.setString(2, regModel.getLastname());
             ps.setString(3, regModel.getEmail());
-            ps.setString(4, regModel.getUsername());
+            ps.setString(4, regModel.getMobileno());
             ps.setString(5, regModel.getPassword());
+            ps.setString(6, regModel.getConfirmpassword());  // Corrected method to get confirm password
+            
+            // Execute the update and check the result
             status = ps.executeUpdate() > 0;
+            
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("SQL Error: " + e.getMessage()); // Print specific error
+            e.printStackTrace(); // Log the full stack trace for debugging
         }
+        
         return status;
     }
 }

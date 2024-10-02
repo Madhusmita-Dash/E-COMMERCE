@@ -19,14 +19,26 @@ public class Registration extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String fname = request.getParameter("fname");
-        String lname = request.getParameter("lname");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
         String email = request.getParameter("email");
-        String username = request.getParameter("username");
+        String mobileno = request.getParameter("mobileno");
         String password= request.getParameter("password");
-
-        RegModel regModel = new RegModel(fname,lname, email,username,password);
+        String confirmpassword= request.getParameter("confirmpassword");
+        
+        if (firstname == null || firstname.trim().isEmpty() ||
+                lastname == null || lastname.trim().isEmpty() ||
+                email == null || email.trim().isEmpty() ||
+                mobileno == null || mobileno.trim().isEmpty() ||
+                password == null || password.trim().isEmpty() ||
+                confirmpassword == null || confirmpassword.trim().isEmpty()) {
+                response.getWriter().append("All fields are required!");
+                return;
+        }
+  
+        RegModel regModel = new RegModel(firstname,lastname, email,mobileno,password,confirmpassword);
         RegistrationDao dao = new RegistrationDao();
+        
         boolean isSaved = dao.saveRegistration(regModel);
 
         if (isSaved) {

@@ -1,46 +1,34 @@
-+ function($) {
-  $('.palceholder').click(function() {
-    $(this).siblings('input').focus();
-  });
+// Wait for the DOM to load
+$(document).ready(function() {
 
-  $('.form-control').focus(function() {
-    $(this).parent().addClass("focused");
-  });
-
-  $('.form-control').blur(function() {
-    var $this = $(this);
-    if ($this.val().length == 0)
-      $(this).parent().removeClass("focused");
-  });
-  $('.form-control').blur();
-
-  // validetion
-  $.validator.setDefaults({
-    errorElement: 'span',
-    errorClass: 'validate-tooltip'
-  });
-
+  // Form validation
   $("#formvalidate").validate({
     rules: {
-      userName: {
+      email: {
         required: true,
-        minlength: 6
+        email: true
       },
-      userPassword: {
+      password: {
         required: true,
         minlength: 6
       }
     },
     messages: {
-      userName: {
-        required: "Please enter your username.",
-        minlength: "Please provide valid username."
+      email: {
+        required: "Please enter your email",
+        email: "Please enter a valid email address"
       },
-      userPassword: {
-        required: "Enter your password to Login.",
-        minlength: "Incorrect login or password."
+      password: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 6 characters long"
       }
+    },
+    submitHandler: function(form) {
+      // Simulate a successful login (You would typically handle authentication here)
+      alert("Login successful!");
+
+      // Redirect to the home page
+      window.location.href = "index.jsp"; // Change this to your actual home page URL
     }
   });
-
-}(jQuery);
+});
