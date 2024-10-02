@@ -71,13 +71,12 @@
                         <div class="header__top__left">
                             <p>Free shipping, 10-day return or refund guarantee.</p>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                            
-                            
-                               <% 
+                    </div> 
+                    
+                    
+        <div class="col-lg-6 col-md-5">
+            <div class="header__top__right">
+                 <div class="header__top__links">                     <% 
     if (session == null || session.getAttribute("username") == null) { 
 %>
     <!-- Show Log in link if user is not logged in -->
@@ -139,7 +138,7 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="cart.jsp"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>
                 </div>
@@ -161,7 +160,7 @@
                                 <h2>Fall - Winter Collections 2030</h2>
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <a href="shop.jsp" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                                 <div class="hero__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
