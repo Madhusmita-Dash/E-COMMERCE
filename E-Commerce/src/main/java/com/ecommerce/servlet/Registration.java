@@ -22,23 +22,28 @@ public class Registration extends HttpServlet {
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String email = request.getParameter("email");
-        String mobileno = request.getParameter("mobileno");
-        String password= request.getParameter("password");
-        String confirmpassword= request.getParameter("confirmpassword");
-        
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        System.out.println("Received Data: ");
+        System.out.println("Firstname: " + firstname);
+        System.out.println("Lastname: " + lastname);
+        System.out.println("Email: " + email);
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
+
         if (firstname == null || firstname.trim().isEmpty() ||
                 lastname == null || lastname.trim().isEmpty() ||
                 email == null || email.trim().isEmpty() ||
-                mobileno == null || mobileno.trim().isEmpty() ||
-                password == null || password.trim().isEmpty() ||
-                confirmpassword == null || confirmpassword.trim().isEmpty()) {
-                response.getWriter().append("All fields are required!");
-                return;
+                username == null || username.trim().isEmpty() ||
+                password == null || password.trim().isEmpty()) {
+            response.getWriter().append("All fields are required!");
+            return;
         }
-  
-        RegModel regModel = new RegModel(firstname,lastname, email,mobileno,password,confirmpassword);
+
+        RegModel regModel = new RegModel(firstname, lastname, email, username, password);
         RegistrationDao dao = new RegistrationDao();
-        
+
         boolean isSaved = dao.saveRegistration(regModel);
 
         if (isSaved) {
@@ -46,9 +51,5 @@ public class Registration extends HttpServlet {
         } else {
             response.getWriter().append("Registration Failed!");
         }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
     }
 }
